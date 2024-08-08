@@ -8,7 +8,7 @@ CWD = pathlib.Path(__file__).absolute().parent
 
 def get_version():
     """Gets the mo-gymnasium version."""
-    path = CWD / "sumo_rl" / "__init__.py"
+    path = CWD / "sumo_rl_modified" / "__init__.py" # MODIFIED
     content = path.read_text()
     for line in content.splitlines():
         if line.startswith("__version__"):
@@ -16,7 +16,7 @@ def get_version():
     raise RuntimeError("bad version data in __init__.py")
 
 
-setup(name="sumo-rl", version=get_version(), long_description=open("README.md").read())
+setup(name="sumo-rl-modified", version=get_version(), long_description=open("README.md").read()) # MODIFIED
 
 # python setup.py sdist
 # python setup.py bdist_wheel
